@@ -1,0 +1,18 @@
+Query con select
+
+1 - SELECT * FROM `students` WHERE YEAR(date_of_birth) = '1990'
+2 - SELECT * FROM `courses` WHERE `cfu` > 10
+3 - SELECT * FROM `students` WHERE DATEDIFF("2022-04-28", `date_of_birth`) > 30*365
+4 - SELECT * FROM `courses` WHERE `period` = "I semestre" AND `degree_id`= 2
+5 - SELECT * FROM `exams` WHERE `date` = '2020-06-20' AND `hour`> '14:00:00'
+6 - SELECT * FROM `degrees` WHERE `level` = "magistrale"
+7 - SELECT COUNT(*) AS departamenti FROM `departments`
+8 - SELECT * FROM `teachers` WHERE `phone` IS NULL
+
+
+Query con Group by
+
+1 - SELECT COUNT(id) AS `iscritti`,YEAR(`enrolment_date`) FROM `students` GROUP BY YEAR(`enrolment_date`)
+2 - SELECT `office_address`, COUNT(*) FROM `teachers` GROUP BY `office_address`
+3 - SELECT `exam_id`,AVG(`vote`) AS `Media` FROM `exam_student` GROUP BY `exam_id`
+4 - SELECT `department_id`, COUNT(*) FROM `degrees` GROUP BY `department_id`
